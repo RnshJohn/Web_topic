@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'face_emotion.apps.FaceEmotionConfig',
     'rest_framework',
-    'login'
+    'login',
 ]
 
 MIDDLEWARE = [

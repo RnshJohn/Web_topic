@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # url("^$", views.index, name="Homepage"),
     # url('getUserMessage', views.getUserMessage, name="Message"),
-    path('api-auth/', include('rest_framework.urls')),
+    # path('api-auth/', include('rest_framework.urls')),
     path('login/', include('login.urls')),
 
 ]
