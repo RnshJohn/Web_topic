@@ -37,9 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'face_emotion.apps.FaceEmotionConfig',
+    'phonenumber_field',
     'rest_framework',
-    'login',
+    'main',
+    'user',
 ]
 
 MIDDLEWARE = [

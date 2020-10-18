@@ -14,18 +14,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 from django.conf.urls import url
-from face_emotion import views
+
 from django.conf.urls import include
 from django.urls import path
-
+from main import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # url("^$", views.index, name="Homepage"),
+    # url("^$", views, name="Homepage"),
     # url('getUserMessage', views.getUserMessage, name="Message"),
     # path('api-auth/', include('rest_framework.urls')),
-    path('login/', include("login.urls")),
+    path('user/', include('user.urls')),
 
 ]

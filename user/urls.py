@@ -1,10 +1,10 @@
-#-*- coding:utf-8 _*-  
+# -*- coding:utf-8 _*-
 """ 
 @Author: John
 @Email: workspace2johnwu@gmail.com
 @License: Apache Licence 
-@File: form.py.py 
-@Created: 2020/10/14
+@File: urls.py.py 
+@Created: 2020/10/15
 @site:  
 @software: PyCharm 
 
@@ -23,21 +23,13 @@
                   ┃┫┫  ┃┫┫
                   ┗┻┛  ┗┻┛ 
 """
+from django.contrib import admin
+from django.urls import path, re_path
+from django.conf.urls import url
+from user import views
 
+from django.conf.urls import include
 
-from django import forms
-from .models import *
-from phonenumber_field.formfields import PhoneNumberField
-
-
-# class ClientForm(forms.Form):
-#     phone = PhoneNumberField()
-
-
-
-class ImageForm(forms.ModelForm):
-    class Meta:
-        model= Client
-        fields= ["name", "imagefile"]
-
-
+urlpatterns = [
+    path('login/', views.login),
+]
