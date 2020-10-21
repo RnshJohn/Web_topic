@@ -26,6 +26,7 @@ urlpatterns = [
     # url("^$", views, name="Homepage"),
     # url('getUserMessage', views.getUserMessage, name="Message"),
     # path('api-auth/', include('rest_framework.urls')),
-    path('user/', include('user.urls')),
+    path('account/', include('main.urls')),
+
 
 ]

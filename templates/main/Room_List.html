@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- 網站初始化&標題定義 -->
+	<title>情緒監控-Room_List</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="format-detection" content="telephone = no" />
+	<meta name="keywords"  content="分組、交友、同好、專題討論" />
+	<meta name="description" content="校園組隊網" />
+	
+	<!-- 快捷 & 收藏 圖標宣告 -->
+		<!--
+		<link 	rel="shortcut icon" 
+				href="" 
+				type="image/x-icon" />
+						
+		<link 	rel="Bookmark" 
+				href="" />
+		-->
+
+	<!-- CSS引用宣告 -->
+	<link href="css\Button.css" rel="stylesheet" type="text/css" /><!--按鈕-->
+	<link href="css\Box.css" rel="stylesheet" type="text/css" /><!--框架-->
+	<link href="css\font.css" rel="stylesheet" type="text/css" /><!--字體形-->
+	<link href="\css\ScreenRegulator.css" rel="stylesheet" type="text/css" /><!--屏幕適應-->
+
+	<!-- Js引用宣告 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script><!--移動效果-->
+	<script type="text/javascript" language="javascript" src="js\RoomListColor.js"></script><!--顏色變化-->
+	<script type="text/javascript" language="javascript" src="js\Button-A.js"></script>
+	<script type="text/javascript" language="javascript" src="js\Button-D.js"></script>
+
+</head>
+
+<body>
+	
+	<!-- 整體Box -->
+	<div class="Box-mainContance-Home">
+
+		<!--左側Box 已加入的組別-->
+		<div class="Box-LeftContance-Home">
+			<!--Logo-->
+			<div class="Box-LeftContance-Home_tableCube"
+				 id="Box-LeftContance-Home_tableCube1">
+				 <div class="Box-LeftContance-Home_Logo"
+				 	  style="background-image: url('img/Our.png');
+					   		 background-size:100% 100%;">
+				 </div>
+			</div>
+
+			<!--紅點提示-->
+			<div class="Box-RedDot"
+				 id="Box-RedDotA"></div>
+			
+			<div class="Box-RedDot"
+				 id="Box-RedDotB"></div>
+
+			<!--組別1-->
+			<div class="Box-LeftContance-Home_tableCube"
+				 id="Box-LeftContance-Home_tableCube2">
+				 <div class="Box-LeftContance-Home_JoinInGroup"
+				 	  style="background-image: url('img/Group_Basketball.png');
+					   		 background-size:100% 100%;">
+				 </div>
+			</div>
+
+			<!--組別2-->
+			<div class="Box-LeftContance-Home_tableCube"
+				 id="Box-LeftContance-Home_tableCube3">
+				 <div class="Box-LeftContance-Home_JoinInGroup"
+				 	  style="background-image: url('img/Group_Volleyball.png');
+					   		 background-size:100% 100%;">
+				 </div>
+			</div>
+
+			<!--組別3-->
+			<div class="Box-LeftContance-Home_tableCube"
+				 id="Box-LeftContance-Home_tableCube4">
+				 <div class="Box-LeftContance-Home_JoinInGroup"
+				 	  style="background-image: url('img/Group_Tree.png');
+					   		 background-size:100% 100%;">
+				 </div>
+			</div>
+
+			<!--組別4-->
+			<div class="Box-LeftContance-Home_tableCube"
+				 id="Box-LeftContance-Home_tableCube5">
+				 <div class="Box-LeftContance-Home_JoinInGroup"
+				 	  style="background-image: url('img/Group_Book.png');
+					   		 background-size:100% 100%;">
+				 </div>
+			</div>
+
+			<!--組別5-->
+			<div class="Box-LeftContance-Home_tableCube"
+				 id="Box-LeftContance-Home_tableCube6">
+				 <div class="Box-LeftContance-Home_JoinInGroup"
+				 	  style="background-image: url('img/Group_Pen.png');
+					   		 background-size:100% 100%;">
+				 </div>
+			</div>
+
+			<!--組別6-->
+			<div class="Box-LeftContance-Home_tableCube"
+				 id="Box-LeftContance-Home_tableCube7">
+				 groupF
+			</div>
+
+			<!--組別7-->
+			<div class="Box-LeftContance-Home_tableCube"
+				 id="Box-LeftContance-Home_tableCube8">
+				 groupA
+			</div>
+
+		</div>
+
+		<!--右側Box-->
+		<div class="Box-RightContance-Home"><!--右側主體定義-->
+			<div class="Box-RightContance-Home_CenterBox"><!--固定內容版面&置中-->
+
+				<!--頂部Top-->
+				<div class="Box-RightContance-Home_Top"
+					 id="Box-RightContance-Home_Top">
+
+					<!--搜索欄-->
+					<div class="searchBox">
+						<form>
+							<!--輸入欄-->
+							<input type="text" placeholder="   Search Group Name or ID to join in" name="name"
+								style=" width: 300px;
+										height:20px;
+										top:5px;
+										left: 0px;
+										position:absolute;">
+							<!--按鈕 --
+							<button type="submit"
+									style="width:50px;
+										height: 26px;
+										top:5px;
+										left: 320px;
+										position:absolute;"></button>	-->	
+						</form>
+					</div>
+					
+					<div style="top:60px;
+								left:1250px; 
+								position:absolute;">
+								<a href="Home.html"
+								   style="text-decoration:none;">
+									<span style="font-family:Arial; 
+												 font-size: 20px;
+													color : rgb(160, 160, 160);">Back
+									</span>
+								</a>
+					</div>
+
+					<!--設置選項按鈕-->
+					<div class="Box-RightContance-Home_SettingButton"
+						 style="background-image: url('img/SettingButtonIMG.png');
+						 		background-size:100% 100%;"></div>
+
+				</div>
+
+				<!--水平分割線-->
+				<div class="Box-hr" id="Box-hrA"></div>
+				
+				<!--分組標題box-->
+				<div class="Box-RightContance-Home_Title"
+					 id="Box-RightContance-Home_TitleA">
+
+					<!--標題A-->
+					<span class="Font-Home-Title">Room List</span>
+					<span	class="Font-Home-Title"
+							style="font-size:50px;
+								   top:13px;
+								   left:150px;"> > </span>
+
+					<!--最新&熱門按鈕-->
+
+					<!--最新組別-->
+					<div class="Box-RightContance-Home_shortCut"
+						 id="Box-RightContance-Home_shortCut-NewGroup"
+						 style="background-image: url('img/NewGroup.png');
+								 background-size:100% 100%;"></div>
+
+					<!--熱門組別-->
+					<div class="Box-RightContance-Home_shortCut"
+						 id="Box-RightContance-Home_shortCut-HotGroup"
+						 style="background-image: url('img/HotGroup.png');
+								background-size:100% 100%;"></div>
+
+				</div>
+		
+				<!--主要內容A-Box -->
+				<div class="Box-RightContance-Group"
+					 id="Box-RightContance-GroupA">
+
+			<!--1號房間Start-->		
+					<!--ContanceA-->
+					<div class="Box-RoomList-MainBox"
+						 id="Box-RoomList-MainBoxA">
+						<!--TitleA-->
+						<div class="Box-RoomList-Title">
+							<span class="Font-RoomList-Title">
+								A
+							</span>
+						</div>
+
+						<div class="Box-RoomList-Setting">
+							<span class="Font-RoomList-Data">
+								B
+							</span>
+						</div>
+
+						<div class="Box-RoomList-Data">
+							<span class="Font-RoomList-Setting">
+                                C
+							</span>
+						</div>
+
+						<div class="Box-hr" id="Box-hrC"></div>
+
+						<a	class="Box-RoomList-MainBox"
+							style="top:0px; left:0px;"
+							href="Chat.html"></a><!--跳轉到chat介面-->
+					</div>
+			<!--1號房間End-->			
+
+					<!--ContanceB-->
+					<div class="Box-RoomList-MainBox"
+						 id="Box-RoomList-MainBoxB">
+						<!--TitleB-->
+						<div class="Box-RoomList-Title">
+							<span class="Font-RoomList-Title">
+								A
+							</span>
+						</div>
+
+						<div class="Box-RoomList-Setting">
+							<span class="Font-RoomList-Data">
+								B
+							</span>
+						</div>
+
+						<div class="Box-RoomList-Data">
+							<span class="Font-RoomList-Setting">
+                                C
+							</span>
+						</div>
+
+						<div class="Box-hr" id="Box-hrD"></div>
+						<a	class="Box-RoomList-MainBox"
+							style="top:0px; left:0px;"
+							href="Chat.html"></a>
+					</div>
+
+
+					<!--ContanceC-->
+					<div class="Box-RoomList-MainBox"
+					 	 id="Box-RoomList-MainBoxC">
+						<!--TitleC-->
+						<div class="Box-RoomList-Title">
+							<span class="Font-RoomList-Title">
+								A
+							</span>
+						</div>
+
+						<div class="Box-RoomList-Setting">
+							<span class="Font-RoomList-Data">
+								B
+							</span>
+						</div>
+
+						<div class="Box-RoomList-Data">
+							<span class="Font-RoomList-Setting">
+                                C
+							</span>
+						</div>
+
+						<div class="Box-hr" id="Box-hrE"></div>
+						<a	class="Box-RoomList-MainBox"
+							style="top:0px; left:0px;"
+							href="Chat.html"></a>
+					</div>
+
+					<!--ContanceD-->
+					<div class="Box-RoomList-MainBox"
+						 id="Box-RoomList-MainBoxD">
+						<!--TitleD-->
+						<div class="Box-RoomList-Title">
+							<span class="Font-RoomList-Title">
+								A
+							</span>
+						</div>
+
+						<div class="Box-RoomList-Setting">
+							<span class="Font-RoomList-Data">
+								B
+							</span>
+						</div>
+
+						<div class="Box-RoomList-Data">
+							<span class="Font-RoomList-Setting">
+                                C
+							</span>
+						</div>
+
+						<div class="Box-hr" id="Box-hrF"></div>
+						<a	class="Box-RoomList-MainBox"
+							style="top:0px; left:0px;"
+							href="Chat.html"></a>
+					</div>
+
+
+				</div>
+
+			</div>
+		</div>
+
+
+	</div>
+
+	
+	
+</body>
+</html>

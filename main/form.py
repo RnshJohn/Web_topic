@@ -50,7 +50,7 @@ def email_check(email):
 class RegisterForm(forms.Form):
     username = forms.CharField(label='username', max_length=50)
     email = forms.EmailField(label='Email')
-    phone = forms.IntegerField(widget=forms.TextInput(attrs={'class': 'form-control'}),
+    phone_number = forms.IntegerField(widget=forms.TextInput(attrs={'class': 'form-control'}),
                                required=True)
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Password Confirmation', widget=forms.PasswordInput)
