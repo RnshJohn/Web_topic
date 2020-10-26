@@ -28,7 +28,7 @@
 from django import forms
 from .models import *
 import re
-from phonenumber_field.formfields import
+
 from phonenumber_field.formfields import PhoneNumberField
 
 
@@ -36,11 +36,10 @@ from phonenumber_field.formfields import PhoneNumberField
 #     phone = PhoneNumberField()
 
 
-
-class ImageForm(forms.ModelForm):
-    class Meta:
-        model= UserProfile
-        fields= ["name", "imagefile"]
+# class ImageForm(forms.ModelForm):
+#     class Meta:
+#         model= UserProfile
+#         fields= ["name", "imagefile"]
 
 
 def email_check(email):
@@ -48,12 +47,17 @@ def email_check(email):
     return re.match(pattern, email)
 
 class RegisterForm(forms.Form):
-    username = forms.CharField(label='username', max_length=50)
-    email = forms.EmailField(label='Email')
-    phone_number = forms.IntegerField(widget=forms.TextInput(attrs={'class': 'form-control'}),
+    username = forms.CharField(label='username', max_length=50,
+                               widget=forms.TextInput(attrs={'class': "Box-InputBox", 'id': "Box-InputBox_Registered_NickName", 'placeholder': "Username"}))
+    email = forms.EmailField(label='Email',
+                             widget=forms.EmailInput(attrs={'class': 'Box-InputBox', 'id': 'Box-InputBox_Registered_Email', 'placeholder': 'Email'}))
+    phone_number = forms.IntegerField(widget=forms.TextInput(attrs={'class': 'Box-InputBox', 'id': 'Box-InputBox_Registered_Phone', 'placeholder': "Phone Number"}),
                                required=True)
-    password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Password Confirmation', widget=forms.PasswordInput)
+    password1 = forms.CharField(label='Password',
+                                widget=forms.PasswordInput(attrs={'class': "Box-InputBox", 'id': "Box-InputBox_Registered_Password", 'placeholder': "Password"}))
+    password2 = forms.CharField(label='Password Confirmation',
+                                widget=forms.PasswordInput(attrs={'class': "Box-InputBox", 'id': "Box-InputBox_Registered_RePassword", 'placeholder': "Comfirm Password"}))
+
 
     def clean_username(self):
         username = self.cleaned_data.get('username')
@@ -105,6 +109,7 @@ class LoginForm(forms.Form):
 
     def clean_username(self):
         username = self.cleaned_data.get('username')
+
         if email_check(username):
             filter_result = User.objects.filter(email__exact=username)
             if not filter_result:
