@@ -56,10 +56,11 @@ def register(request):
             username = form.cleaned_data['username']
             email = form.cleaned_data['email']
             password = form.cleaned_data['password2']
-
+            phone_number = form.cleaned_data['phone_number']
+            image = form.cleaned_data['image']
             user = User.objects.create_user(username=username, password=password, email=email)
 
-            user_profile = UserProfile(user=user)
+            user_profile = UserProfile(user=user, phone_number=phone_number, mainimage=image)
             user_profile.save()
 
             return HttpResponseRedirect("/account/login")

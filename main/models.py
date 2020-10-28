@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
 
-    phone_number = PhoneNumberField('Telephone',blank=False)
-    mainimage = models.ImageField(upload_to='images/', null=True, verbose_name="")
+    phone_number = models.CharField('Telephone', max_length= 128 ,blank=True)
+    image = models.ImageField('Image', null=True, upload_to='images/', blank=True)
 
 
     class Meta:

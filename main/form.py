@@ -24,10 +24,14 @@
                   ┗┻┛  ┗┻┛ 
 """
 
-
+import phonenumbers
 from django import forms
 from .models import *
 import re
+import hashlib
+from PIL import Image
+import io
+from django.core.files.base import ContentFile
 
 from phonenumber_field.formfields import PhoneNumberField
 
@@ -46,19 +50,48 @@ def email_check(email):
     pattern = re.compile("\"?([-a-zA-Z0-9.'?{}]+@\w+\.\w+)\"?")
     return re.match(pattern, email)
 
+
+
+
 class RegisterForm(forms.Form):
+
+
     username = forms.CharField(label='username', max_length=50,
                                widget=forms.TextInput(attrs={'class': "Box-InputBox", 'id': "Box-InputBox_Registered_NickName", 'placeholder': "Username"}))
+    image = forms.ImageField(label="image",
+                             widget=forms.FileInput(attrs={'class': "Box-InputBox", 'id': "Box-InputBox_Registered_IDNumber"}))
     email = forms.EmailField(label='Email',
                              widget=forms.EmailInput(attrs={'class': 'Box-InputBox', 'id': 'Box-InputBox_Registered_Email', 'placeholder': 'Email'}))
-    phone_number = forms.IntegerField(widget=forms.TextInput(attrs={'class': 'Box-InputBox', 'id': 'Box-InputBox_Registered_Phone', 'placeholder': "Phone Number"}),
+    phone_number = PhoneNumberField(region='TW',widget=forms.TextInput(attrs={'class': 'Box-InputBox', 'id': 'Box-InputBox_Registered_Phone', 'placeholder': "Phone Number"}),
                                required=True)
+
     password1 = forms.CharField(label='Password',
                                 widget=forms.PasswordInput(attrs={'class': "Box-InputBox", 'id': "Box-InputBox_Registered_Password", 'placeholder': "Password"}))
     password2 = forms.CharField(label='Password Confirmation',
                                 widget=forms.PasswordInput(attrs={'class': "Box-InputBox", 'id': "Box-InputBox_Registered_RePassword", 'placeholder': "Comfirm Password"}))
 
+    def clean_image(self):
+        image = self.cleaned_data.get('image')
+        md5 = hashlib.md5()
+        md5.update(repr(image.name).encode('utf-8'))
+        file_name = md5.hexdigest()
 
+        if image._size > 30 * 1024 * 1024:
+            raise forms.ValidationError(('File is too big.'), code='invalid')
+
+        image = Image.open(image)
+
+
+        if image.format not in ('BMP', 'PNG', 'JPEG', 'GIF'):
+            raise forms.ValidationError(("Unsupported image type. Please uplod a bmp, png, jpeg, or gif."),
+                                        code='invalid')
+        image.thumbnail([1024, 1024], Image.ANTIALIAS)
+        image_io = io.BytesIO()
+        image.save(image_io, format=image.format)
+        image_name = '{}.{}'.format(file_name, image.format)
+        image = ContentFile(image_io.getvalue(), image_name)
+
+        return image
     def clean_username(self):
         username = self.cleaned_data.get('username')
         if len(username) < 3:
@@ -100,10 +133,15 @@ class RegisterForm(forms.Form):
 
         return password2
 
+    def clean_phone_number(self):
+        phone_number = self.cleaned_data.get('phone_number')
+        if not phonenumbers.is_valid_number(phone_number):
+            raise forms.ValidationError("Number is not in TW format")
+        return phone_number
 
 class LoginForm(forms.Form):
-    username = forms.CharField(label='Username', max_length=50)
-    password = forms.CharField(label='Password', widget=forms.PasswordInput)
+    username = forms.CharField(label='Username', max_length=50, widget=forms.TextInput(attrs={'class': "Box-InputBox"}))
+    password = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'class': "Box-InputBox"}))
 
     # use clean methods to define custom validation rules
 
