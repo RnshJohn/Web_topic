@@ -72,25 +72,6 @@ class RegisterForm(forms.Form):
 
     def clean_image(self):
         image = self.cleaned_data.get('image')
-        md5 = hashlib.md5()
-        md5.update(repr(image.name).encode('utf-8'))
-        file_name = md5.hexdigest()
-
-        if image._size > 30 * 1024 * 1024:
-            raise forms.ValidationError(('File is too big.'), code='invalid')
-
-        image = Image.open(image)
-
-
-        if image.format not in ('BMP', 'PNG', 'JPEG', 'GIF'):
-            raise forms.ValidationError(("Unsupported image type. Please uplod a bmp, png, jpeg, or gif."),
-                                        code='invalid')
-        image.thumbnail([1024, 1024], Image.ANTIALIAS)
-        image_io = io.BytesIO()
-        image.save(image_io, format=image.format)
-        image_name = '{}.{}'.format(file_name, image.format)
-        image = ContentFile(image_io.getvalue(), image_name)
-
         return image
     def clean_username(self):
         username = self.cleaned_data.get('username')
@@ -140,8 +121,8 @@ class RegisterForm(forms.Form):
         return phone_number
 
 class LoginForm(forms.Form):
-    username = forms.CharField(label='Username', max_length=50, widget=forms.TextInput(attrs={'class': "Box-InputBox"}))
-    password = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'class': "Box-InputBox"}))
+    username = forms.CharField(label='Username', max_length=50, widget=forms.TextInput(attrs={'class': "Box-InputBox", 'placeholder': "Username or  Email"}))
+    password = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'class': "Box-InputBox", 'placeholder': 'Password'}))
 
     # use clean methods to define custom validation rules
 
@@ -149,9 +130,9 @@ class LoginForm(forms.Form):
         username = self.cleaned_data.get('username')
 
         if email_check(username):
-            filter_result = User.objects.filter(email__exact=username)
+            filter_result = User.objects.get(email=username)
             if not filter_result:
-                raise forms.ValidationError('This emial does not exist')
+                raise forms.ValidationError('This email does not exist')
         else:
             filter_result = User.objects.filter(username__exact=username)
             if not filter_result:

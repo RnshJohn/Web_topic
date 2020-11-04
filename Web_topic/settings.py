@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'rest_framework',
     'main.apps.MainConfig',
+    'faceAI.apps.FaceaiConfig'
 
 ]
 
@@ -126,7 +127,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/images/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 
 

@@ -22,16 +22,15 @@
 		-->
 
 	<!-- CSS引用宣告 -->
-	<link href="css\Button.css" rel="stylesheet" type="text/css" /><!--按鈕-->
-	<link href="css\Box.css" rel="stylesheet" type="text/css" /><!--框架-->
-	<link href="css\font.css" rel="stylesheet" type="text/css" /><!--字體形-->
-	<link href="\css\ScreenRegulator.css" rel="stylesheet" type="text/css" /><!--屏幕適應-->
+
+	<link href="/static/CSS/Box.css" rel="stylesheet" type="text/css" /><!--框架-->
+	<link href="/static/CSS/Font.css" rel="stylesheet" type="text/css" /><!--字體形-->
+
 
 	<!-- Js引用宣告 -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script><!--移動效果-->
-	<script type="text/javascript" language="javascript" src="js\Move.js"></script><!--移動座標-->
-	<script type="text/javascript" language="javascript" src="js\Button-A.js"></script>
-	<script type="text/javascript" language="javascript" src="js\Button-D.js"></script>
+	<script type="text/javascript" language="javascript" src="/static/JS/Move.js"></script><!--移動座標-->
+
 
 </head>
 
@@ -146,9 +145,9 @@
 					</div>
 
 					<!--設置選項按鈕-->
-					<div class="Box-RightContance-Home_SettingButton"
-						 style="background-image: url('img/SettingButtonIMG.png');
-						 		background-size:100% 100%;"></div>
+{#                   	<a class="Box-RightContance-SettingLink" href="{% url 'main:profile_update' %}"> &#8592; HI,{{ user.username }}</a>#}
+                    <img class="Box-RightContance-Home_SettingButton"
+                         src="/static{{ image.image.url }}" style="background-size: 100% 100%; border-radius: 50%;">
 
 				</div>
 
@@ -196,7 +195,7 @@
 									 border-top-left-radius: 10px;
 									 border-top-right-radius: 10px"></div><!--圖片-->
 						<div class="Box-RightContance-Group-TitleBox">
-							 <span class="Font-Box-RightContance-Group-TitleBox">1</span>
+							 <span class="Font-Box-RightContance-Group-TitleBox"></span>
 						</div> 
 						<div class="Box-RightContance-Group-ContanceBox">
 							<span class="Font-Box-RightContance-Group-ContanceBox">1</span>
@@ -216,7 +215,7 @@
 									 border-top-left-radius: 10px;
 									 border-top-right-radius: 10px"></div><!--圖片-->
 						<div class="Box-RightContance-Group-TitleBox">
-							 <span class="Font-Box-RightContance-Group-TitleBox">2</span>
+							 <span class="Font-Box-RightContance-Group-TitleBox"></span>
 						</div> 
 						<div class="Box-RightContance-Group-ContanceBox">
 							<span class="Font-Box-RightContance-Group-ContanceBox">2</span>
@@ -277,7 +276,7 @@
 									 border-top-left-radius: 10px;
 									 border-top-right-radius: 10px"></div><!--圖片-->
 						<div class="Box-RightContance-Group-TitleBox">
-							 <span class="Font-Box-RightContance-Group-TitleBox">5</span>
+							 <span class="Font-Box-RightContance-Group-TitleBox"></span>
 						</div> 
 						<div class="Box-RightContance-Group-ContanceBox">
 							<span class="Font-Box-RightContance-Group-ContanceBox">5</span>

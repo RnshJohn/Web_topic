@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="715c92da-4cb6-4a69-aa2f-692a1d66bc8e" name="Default Changelist" comment="intitial folder">
+      <change afterPath="$PROJECT_DIR$/faceAI/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web_topic/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Web_topic/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web_topic/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Web_topic/urls.py" afterDir="false" />
@@ -9,10 +10,10 @@
       <change beforePath="$PROJECT_DIR$/main/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/form.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/CSS/Box.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/CSS/Font.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/FoundPassword.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/Registered.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/Home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/Login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/Room_List.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/Room_List.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/profile_updata.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/profile_updata.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pip-20.2.3.dist-info/INSTALLER" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pip-20.2.3.dist-info/LICENSE.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pip-20.2.3.dist-info/METADATA" beforeDir="false" />
@@ -190,9 +191,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -210,7 +211,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Final-Topic" />
+    <property name="last_opened_file_path" value="E:/face_recognition" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -267,7 +268,10 @@
       <workItem from="1603257177199" duration="9667000" />
       <workItem from="1603611475244" duration="9029000" />
       <workItem from="1603640608253" duration="21219000" />
-      <workItem from="1603807006376" duration="15182000" />
+      <workItem from="1603807006376" duration="16387000" />
+      <workItem from="1603947327794" duration="5582000" />
+      <workItem from="1604139997503" duration="6271000" />
+      <workItem from="1604150962487" duration="33410000" />
     </task>
     <task id="LOCAL-00001" summary="intitial folder">
       <created>1602653135027</created>
@@ -318,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603260110241</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="intitial folder">
+      <created>1603893018253</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1603893018253</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,30 +344,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603853084588" />
-    <state x="569" y="0" key="CommitChangelistDialog2" timestamp="1603727331690">
+    <state x="569" y="0" key="CommitChangelistDialog2" timestamp="1603893016444">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="569" y="0" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603727331690" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1603853083813">
+    <state x="569" y="0" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603893016444" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1604494421853">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603853083813" />
-    <state width="1877" height="273" key="GridCell.Tab.0.bottom" timestamp="1603890255933">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604494421853" />
+    <state width="1877" height="260" key="GridCell.Tab.0.bottom" timestamp="1604493628678">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603890255933" />
-    <state width="1877" height="273" key="GridCell.Tab.0.center" timestamp="1603890255933">
+    <state width="1877" height="260" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604493628678" />
+    <state width="1877" height="260" key="GridCell.Tab.0.center" timestamp="1604493628678">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="273" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603890255933" />
-    <state width="1877" height="273" key="GridCell.Tab.0.left" timestamp="1603890255933">
+    <state width="1877" height="260" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604493628678" />
+    <state width="1877" height="260" key="GridCell.Tab.0.left" timestamp="1604493628678">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="273" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603890255933" />
-    <state width="1877" height="273" key="GridCell.Tab.0.right" timestamp="1603890255933">
+    <state width="1877" height="260" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604493628678" />
+    <state width="1877" height="260" key="GridCell.Tab.0.right" timestamp="1604493628678">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="273" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603890255933" />
+    <state width="1877" height="260" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604493628678" />
     <state x="184" y="86" key="MergeDialog" timestamp="1602755861317">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -365,10 +376,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603888085430" />
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1603260116945">
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1603893024520">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603260116945" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603893024520" />
     <state x="774" y="379" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603706648869">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
