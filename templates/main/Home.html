@@ -126,26 +126,62 @@
 
 					<!--搜索欄-->
 					<div class="searchBox">
-						<form>
-							<!--輸入欄-->
-							<input type="text" placeholder="   Search Group Name or ID to join in" name="name"
+						<form name="searchgroup" method="post" action="" enctype="multipart/form-data">
+							{% csrf_token %}
+                            <!--輸入欄-->
+							<input style="width: 300px; height: 50px; top: 17px; position: absolute; font-size: medium;" type="text" placeholder="   Search Group Name or ID to join in" name="groupname"
 								style=" width: 300px;
 										height:20px;
 										top:5px;
 										left: 0px;
 										position:absolute;">
-							<!--按鈕 --
-							<button type="submit"
-									style="width:50px;
-										height: 26px;
-										top:5px;
+							<!--按鈕 -->
+							<button type="submit" name ="search" class ="button"
+									style="
+										top: 17px;
 										left: 320px;
-										position:absolute;"></button>	-->	
+										position:absolute;">submit</button>
 						</form>
+
 					</div>
 
+                    <div style="top: 16px;
+				              left: 590px;
+				              position: absolute;
+				              font-size: x-large;
+				              width: 120px;
+				              height: 40px;">
+                        <a class="button"
+                       href="{% url 'main:user-page' %}">Home</a>
+                    </div>
+
 					<!--設置選項按鈕-->
-{#                   	<a class="Box-RightContance-SettingLink" href="{% url 'main:profile_update' %}"> &#8592; HI,{{ user.username }}</a>#}
+                   	<div class="wrapper">
+                         <a href="{% url 'main:add-group' %}" class="button">ADD-GROUP</a>
+                    </div>
+
+					<!--profile按鈕-->
+                    <div style="top: 16px;
+				              left: 875px;
+				              position: absolute;
+				              font-size: x-large;
+				              width: 120px;
+				              text-decoration: none;
+				              height: 40px;">
+                        <a class="button"
+                       href="{% url 'main:profile_update' %}"> Hi~{{ user.username }}</a>
+                    </div>
+
+{#                    登出按鈕#}
+                     <div style="top: 16px;
+				              left: 1062px;
+				              position: absolute;
+				              font-size: x-large;
+				              width: 180px;
+				              height: 40px;">
+                         <a href="{% url 'main:logout' %}" class="button">LOG-OUT</a>
+                    </div>
+
                     <img class="Box-RightContance-Home_SettingButton"
                          src="/static{{ image.image.url }}" style="background-size: 100% 100%; border-radius: 50%;">
 
@@ -195,7 +231,7 @@
 									 border-top-left-radius: 10px;
 									 border-top-right-radius: 10px"></div><!--圖片-->
 						<div class="Box-RightContance-Group-TitleBox">
-							 <span class="Font-Box-RightContance-Group-TitleBox"></span>
+							 <span class="Font-Box-RightContance-Group-TitleBox">ABC</span>
 						</div> 
 						<div class="Box-RightContance-Group-ContanceBox">
 							<span class="Font-Box-RightContance-Group-ContanceBox">1</span>
@@ -205,106 +241,106 @@
 							href="Room_List.html"></a> 
 					</div>
 
-					<!--專長-->
-					<div class="Box-RightContance-Group-Func"
-						 id="Box-RightContance-Group-FuncB">
-
-						<div class="Box-RightContance-Group-Photo"
-							style="background-image: url('img/Banner_Specialty.png');
-									 background-size:100% 100%;
-									 border-top-left-radius: 10px;
-									 border-top-right-radius: 10px"></div><!--圖片-->
-						<div class="Box-RightContance-Group-TitleBox">
-							 <span class="Font-Box-RightContance-Group-TitleBox"></span>
-						</div> 
-						<div class="Box-RightContance-Group-ContanceBox">
-							<span class="Font-Box-RightContance-Group-ContanceBox">2</span>
-						</div>
-						<a	class="Box-RightContance-Group-Func"
-							style="top:0px;"
-							href="Room_List.html"></a>  
-					</div>
-					
-					<!--社交-->
-					<div class="Box-RightContance-Group-Func"
-						 id="Box-RightContance-Group-FuncC">
-
-						<div class="Box-RightContance-Group-Photo"
-							style="background-image: url('img/Bannner_Communication.png');
-									 background-size:100% 100%;
-									 border-top-left-radius: 10px;
-									 border-top-right-radius: 10px"></div><!--圖片-->
-						<div class="Box-RightContance-Group-TitleBox">
-							 <span class="Font-Box-RightContance-Group-TitleBox">3</span>
-						</div> 
-						<div class="Box-RightContance-Group-ContanceBox"
-							 style="top:260px;">
-							<span class="Font-Box-RightContance-Group-ContanceBox">3</span>
-						</div> 
-						<a	class="Box-RightContance-Group-Func"
-							style="top:0px;"
-							href="Room_List.html"></a> 
-					</div>
-					
-					<!--活動-->
-					<div class="Box-RightContance-Group-Func"
-						 id="Box-RightContance-Group-FuncD">
-
-						<div class="Box-RightContance-Group-Photo"
-							style="background-image: url('img/Banner_Activity.png');
-									 background-size:100% 100%;
-									 border-top-left-radius: 10px;
-									 border-top-right-radius: 10px"></div><!--圖片-->
-						<div class="Box-RightContance-Group-TitleBox">
-							 <span class="Font-Box-RightContance-Group-TitleBox">4</span>
-						</div> 
-						<div class="Box-RightContance-Group-ContanceBox">
-							<span class="Font-Box-RightContance-Group-ContanceBox">4</span>
-						</div> 
-						<a	class="Box-RightContance-Group-Func"
-							style="top:0px;"
-							href="Room_List.html"></a> 
-					</div>
-
-					<!--運動-->
-					<div class="Box-RightContance-Group-Func"
-						 id="Box-RightContance-Group-FuncE">
-
-						<div class="Box-RightContance-Group-Photo"
-							style="background-image: url('img/Banner_Sport.png');
-									 background-size:100% 100%;
-									 border-top-left-radius: 10px;
-									 border-top-right-radius: 10px"></div><!--圖片-->
-						<div class="Box-RightContance-Group-TitleBox">
-							 <span class="Font-Box-RightContance-Group-TitleBox"></span>
-						</div> 
-						<div class="Box-RightContance-Group-ContanceBox">
-							<span class="Font-Box-RightContance-Group-ContanceBox">5</span>
-						</div> 
-						<a	class="Box-RightContance-Group-Func"
-							style="top:0px;"
-							href="Room_List.html"></a> 
-					</div>	 
-
-					<!--其他-->
-					<div class="Box-RightContance-Group-Func"
-						 id="Box-RightContance-Group-FuncF">
-
-						<div class="Box-RightContance-Group-Photo"
-							style="background-image: url('img/Banner_Others.png');
-									 background-size:100% 100%;
-									 border-top-left-radius: 10px;
-									 border-top-right-radius: 10px"></div><!--圖片-->
-						<div class="Box-RightContance-Group-TitleBox">
-							 <span class="Font-Box-RightContance-Group-TitleBox">6</span>
-						</div> 
-						<div class="Box-RightContance-Group-ContanceBox">
-							<span class="Font-Box-RightContance-Group-ContanceBox">6</span>
-						</div> 
-						<a	class="Box-RightContance-Group-Func"
-							style="top:0px;"
-							href="Room_List.html"></a> 
-					</div>	
+{#					<!--專長-->#}
+{#					<div class="Box-RightContance-Group-Func"#}
+{#						 id="Box-RightContance-Group-FuncB">#}
+{##}
+{#						<div class="Box-RightContance-Group-Photo"#}
+{#							style="background-image: url('img/Banner_Specialty.png');#}
+{#									 background-size:100% 100%;#}
+{#									 border-top-left-radius: 10px;#}
+{#									 border-top-right-radius: 10px"></div><!--圖片-->#}
+{#						<div class="Box-RightContance-Group-TitleBox">#}
+{#							 <span class="Font-Box-RightContance-Group-TitleBox"></span>#}
+{#						</div> #}
+{#						<div class="Box-RightContance-Group-ContanceBox">#}
+{#							<span class="Font-Box-RightContance-Group-ContanceBox">2</span>#}
+{#						</div>#}
+{#						<a	class="Box-RightContance-Group-Func"#}
+{#							style="top:0px;"#}
+{#							href="Room_List.html"></a>  #}
+{#					</div>#}
+{#					#}
+{#					<!--社交-->#}
+{#					<div class="Box-RightContance-Group-Func"#}
+{#						 id="Box-RightContance-Group-FuncC">#}
+{##}
+{#						<div class="Box-RightContance-Group-Photo"#}
+{#							style="background-image: url('img/Bannner_Communication.png');#}
+{#									 background-size:100% 100%;#}
+{#									 border-top-left-radius: 10px;#}
+{#									 border-top-right-radius: 10px"></div><!--圖片-->#}
+{#						<div class="Box-RightContance-Group-TitleBox">#}
+{#							 <span class="Font-Box-RightContance-Group-TitleBox">3</span>#}
+{#						</div> #}
+{#						<div class="Box-RightContance-Group-ContanceBox"#}
+{#							 style="top:260px;">#}
+{#							<span class="Font-Box-RightContance-Group-ContanceBox">3</span>#}
+{#						</div> #}
+{#						<a	class="Box-RightContance-Group-Func"#}
+{#							style="top:0px;"#}
+{#							href="Room_List.html"></a> #}
+{#					</div>#}
+{#					#}
+{#					<!--活動-->#}
+{#					<div class="Box-RightContance-Group-Func"#}
+{#						 id="Box-RightContance-Group-FuncD">#}
+{##}
+{#						<div class="Box-RightContance-Group-Photo"#}
+{#							style="background-image: url('img/Banner_Activity.png');#}
+{#									 background-size:100% 100%;#}
+{#									 border-top-left-radius: 10px;#}
+{#									 border-top-right-radius: 10px"></div><!--圖片-->#}
+{#						<div class="Box-RightContance-Group-TitleBox">#}
+{#							 <span class="Font-Box-RightContance-Group-TitleBox">4</span>#}
+{#						</div> #}
+{#						<div class="Box-RightContance-Group-ContanceBox">#}
+{#							<span class="Font-Box-RightContance-Group-ContanceBox">4</span>#}
+{#						</div> #}
+{#						<a	class="Box-RightContance-Group-Func"#}
+{#							style="top:0px;"#}
+{#							href="Room_List.html"></a> #}
+{#					</div>#}
+{##}
+{#					<!--運動-->#}
+{#					<div class="Box-RightContance-Group-Func"#}
+{#						 id="Box-RightContance-Group-FuncE">#}
+{##}
+{#						<div class="Box-RightContance-Group-Photo"#}
+{#							style="background-image: url('img/Banner_Sport.png');#}
+{#									 background-size:100% 100%;#}
+{#									 border-top-left-radius: 10px;#}
+{#									 border-top-right-radius: 10px"></div><!--圖片-->#}
+{#						<div class="Box-RightContance-Group-TitleBox">#}
+{#							 <span class="Font-Box-RightContance-Group-TitleBox"></span>#}
+{#						</div> #}
+{#						<div class="Box-RightContance-Group-ContanceBox">#}
+{#							<span class="Font-Box-RightContance-Group-ContanceBox">5</span>#}
+{#						</div> #}
+{#						<a	class="Box-RightContance-Group-Func"#}
+{#							style="top:0px;"#}
+{#							href="Room_List.html"></a> #}
+{#					</div>	 #}
+{##}
+{#					<!--其他-->#}
+{#					<div class="Box-RightContance-Group-Func"#}
+{#						 id="Box-RightContance-Group-FuncF">#}
+{##}
+{#						<div class="Box-RightContance-Group-Photo"#}
+{#							style="background-image: url('img/Banner_Others.png');#}
+{#									 background-size:100% 100%;#}
+{#									 border-top-left-radius: 10px;#}
+{#									 border-top-right-radius: 10px"></div><!--圖片-->#}
+{#						<div class="Box-RightContance-Group-TitleBox">#}
+{#							 <span class="Font-Box-RightContance-Group-TitleBox">6</span>#}
+{#						</div> #}
+{#						<div class="Box-RightContance-Group-ContanceBox">#}
+{#							<span class="Font-Box-RightContance-Group-ContanceBox">6</span>#}
+{#						</div> #}
+{#						<a	class="Box-RightContance-Group-Func"#}
+{#							style="top:0px;"#}
+{#							href="Room_List.html"></a> #}
+{#					</div>	#}
 
 				</div>
 

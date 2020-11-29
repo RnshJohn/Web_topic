@@ -221,15 +221,63 @@
 				<!--主要內容A-Box -->
 				<div class="Box-RightContance-Group"
                      id="Box-RightContance-GroupA">
-                    <div class="card card-body">
+                    <form name="form1" method="post" action="" enctype="multipart/form-data">
+        <!--Group 名稱-->
+        {% csrf_token %}
+        {{ form.groupname}}
+        {% if form.groupname.help_text %}
+            <p>{{ form.groupname.help_text|safe }}</p>
+        {% endif %}
 
-			            <form method="POST" action="" enctype="multipart/form-data">
-				            {% csrf_token %}
-				            {{form.as_p}}
+        <!--Group Image-->
+        {{ form.groupImage}}
+        {% if form.groupImage.help_text %}
+            <p>{{ form.groupImage.help_text|safe }}</p>
+        {% endif %}
 
-			                <input class="btn btn-primary" type="submit" name="Update_Information">
-			            </form>
-		            </div>
+        <!--Group Password-->
+        {{ form.password1}}
+        {% if form.password1.help_text %}
+            <p>{{ form.password1.help_text|safe }}</p>
+        {% endif %}
+
+
+        <!--password2-->
+        {{ form.password2}}
+        {% if form.password2.help_text %}
+            <p>{{ form.password2.help_text|safe }}</p>
+        {% endif %}
+
+        <input  type="submit"
+                name="registeredGroup"
+                style="top: 250px; left: 57px"
+                value="Comfirm"
+                class="button">
+    </form>
+
+    <script>
+
+        if('{{ form.groupname.errors }}'!=="")
+        {
+            alert('{{ form.groupname.errors }}')
+        }
+        if('{{ form.password1.errors }}'!=="")
+        {
+            alert('{{ form.password1.errors }}')
+        }
+        if('{{ form.password2.errors }}'!=="")
+        {
+            alert('{{ form.password2.errors }}')
+        }
+        {% if messages%}
+        {% for msg in messages %}
+            alert('{{ msg.message }}');
+        {% endfor %}
+        {% endif %}
+
+
+
+    </script>
 
 
 

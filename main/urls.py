@@ -29,6 +29,7 @@ from django.urls import path, re_path
 from django.conf.urls import url
 from main import views
 
+
 from django.conf.urls import include
 app_name = 'main'
 urlpatterns = [
@@ -36,8 +37,15 @@ urlpatterns = [
     path("login/", views.loginPage, name='login'),
     # re_path(r'^user/(?P<pk>\d+)/room/$', views.userPage, name='room'),
     path('user/', views.userPage, name='user-page'),
-    re_path(r'^user/(?P<pk>\d+)/profile/update/$', views.profile_update, name='profile_update'),
+    path("user/<str:pk_name>", views.group_password_smallPage, name='group_password_smallPage'),
+    path("user/add_group/", views.addGroup, name='add-group'),
+    path('user/profile_update/', views.profile_update, name='profile_update'),
+    path('group/<str:pk>', views.groupPage, name='group-page'),
+    path('group/user/<str:pk>', views.emotionPage, name="emotion-page"),
+    path('group/user/<str:pk>/post/<slug:slug>/', views.tagged, name='tagged'),
     re_path(r'^user/(?P<pk>\d+)/pwd_change/$', views.pwd_change, name='pwd_change'),
     path("rigister/", views.register, name='rigister'),
-    path("logout/", views.logout, name='logout')
+    path("logout/", views.logout, name='logout'),
+
+
 ]

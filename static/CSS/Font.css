@@ -161,7 +161,7 @@
 	.Font-Box-RightContance-Group-TitleBox{
 		text-align: center;
 
-		font-family:Arial;
+		font-family: Arial, serif;
 		font-size: 30px;
 		color : rgb(0, 0, 0);
 
@@ -172,8 +172,8 @@
 	.Font-Box-RightContance-Group-ContanceBox{
 		text-align: center;
 
-		font-family:Arial;
-		font-size: 15px;
+		font-family: Arial, serif;
+		font-size: 20px;
 		color : rgb(160, 160, 160);
 
 		font-weight:normal; 

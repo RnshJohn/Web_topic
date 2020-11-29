@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'rest_framework',
     'main.apps.MainConfig',
-    'faceAI.apps.FaceaiConfig'
+    'faceAI.apps.FaceaiConfig',
+    'taggit',
+
 
 ]
 
@@ -85,6 +87,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'OPTIONS': {
+            'timeout': 20,
+        }
     }
 }
 

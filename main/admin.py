@@ -1,5 +1,9 @@
 from django.contrib import admin
-from .models import UserProfile
+from .models import Customer, CustomGroup, EmotionList, Post
 # Register your models here.
 
-admin.site.register(UserProfile)
+
+myModels = [Customer, CustomGroup, EmotionList, Post]
+admin.site.register(myModels)
+
+
